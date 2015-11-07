@@ -1,9 +1,6 @@
 $(document).ready(function(){
 
-  Ractive.components.student = Ractive.extend({
-    template:'#student'
-});
-
+  @@include('components.js')
 
   $.getJSON('/data/'+location.pathname.split('/').slice(3).join('/'), function(res){
 

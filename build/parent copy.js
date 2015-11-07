@@ -1,10 +1,13 @@
 $(document).ready(function(){
 
-  @@include('components.js')
+  Ractive.components.home = Ractive.extend({
+    template:'#home'
+});
+
 
   $.getJSON('/sample', function(res){
 
-    var ractive = new Ractive.components.home({
+    var ractive = new Ractive.components[location.pathname.split('/')[1]]({
       el:'#load',
       data:res
     });
