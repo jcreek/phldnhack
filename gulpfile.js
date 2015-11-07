@@ -11,7 +11,7 @@ var paths = {
   'css':'client/**/*.css',
   'siteJS':'client/*.js',
   'siteCSS':'client/*.css',
-  'siteHTML':'client/index.html'
+  'siteHTML':'client/*.html'
 };
 
 gulp.task('scripts', function(callback){
@@ -43,7 +43,7 @@ gulp.task('pageHTML', function(cb){
   runSequence('componentHTML', 'index', cb);
 })
 
-gulp.task('index', function(){
+gulp.task('siteHTML', function(){
   return gulp.src(paths.siteHTML).pipe(fileinclude({
     prefix: '@@',
     basepath: './build'
@@ -54,7 +54,7 @@ gulp.task('index', function(){
 gulp.task('watch', function(){
   gulp.watch([paths.componentJS, paths.componentHTML], ['scripts', 'pageHTML']);
   gulp.watch([paths.siteJS, paths.componentJS], ['scripts']);
-  gulp.watch([paths.siteHTML], ['index']);
+  gulp.watch([paths.siteHTML], ['siteHTML']);
 });
 
 gulp.task('default', function() {
