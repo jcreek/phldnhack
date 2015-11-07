@@ -34,7 +34,7 @@ gulp.task('componentJS', function(){
 gulp.task('componentHTML', function(){
   return gulp.src(paths.componentHTML).pipe(
     insert.transform(function(contents, file) {
-      return '<script id="' + file.path.split('/').slice(-1)[0].split('.')[0] + '">' + contents + '</script>';
+      return '<script type="text/ractive" id="' + file.path.split('/').slice(-1)[0].split('.')[0] + '">' + contents + '</script>';
     })).pipe(concat('components.html'))
   .pipe(gulp.dest('./build'));
 });
