@@ -10,15 +10,129 @@
     </div>
 </div>
 </script>
-<script type="text/ractive" id="teacher"><div class="row">
-    <div class="col s12 m6 offset-m3">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title grey-text">{{studentName}} - {{age}}</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </div>
-        </div>
+<script type="text/ractive" id="teacher"><!-- {{JSON.stringify(.)}} -->
+
+
+<!-- Navbar goes here -->
+<nav>
+    <div class="nav-wrapper">
+    <!-- Using the Logo as a Modal Trigger (added the modal-trigger class) -->
+      <a href="#modal1" class="brand-logo right modal-trigger">Click here for the Modal</a>
+
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#">Class Data</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Administrate Students</a></li>
+      </ul>
     </div>
-</div>
+  </nav>
+  
+ <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+<!-- Page Layout here -->
+<div class="row">
+	<div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+
+              This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+          <ul class='fields'> <!--from http://learn.ractivejs.org/partials/2 -->
+          	{{#each fields:i}}
+          		{{>field}}
+          	{{/each}}
+          	<strong>Fields are in here</strong>
+          </ul>
+      </div>
+
+      <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <!-- Teal page content
+
+              This content will be:
+          9-columns-wide on large screens,
+          8-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+
+          <div class="card z-depth-2">
+          	<div class="card-content">
+          		<span class="card-title grey-text">{{studentName}} - {{age}}</span>
+          		<p>I am a very simple card. I am good at containing small bits of information.
+          			I am convenient because I require little markup to use effectively.</p>
+          			Class 8Y/IT1 <br>
+          			ICT Module Box <br>
+          			<br>
+          			Behaviour <br>
+          			etc. <br>
+          			<p>This is where the actual table data goes </p>
+
+          			<table class="highlight">
+          				<thead>
+          					<tr>
+          						<th data-field="id">Name</th>
+          						<th data-field="name">Item Name</th>
+          						<th data-field="price">Item Price</th>
+          					</tr>
+          				</thead>
+          				<tbody>
+          					<tr>
+          						<td>Alvin</td>
+          						<td>Eclair</td>
+          						<td>$0.87</td>
+          					</tr>
+          					<tr>
+          						<td>Alan</td>
+          						<td>Jellybean</td>
+          						<td>$3.76</td>
+          					</tr>
+          					<tr>
+          						<td>Jonathan</td>
+          						<td>Lollipop</td>
+          						<td>$7.00</td>
+          					</tr>
+          					<tr>
+          						<td>Shannon</td>
+          						<td>KitKat</td>
+          						<td>$9.99</td>
+          					</tr>
+          				</tbody>
+          			</table>
+
+          		</div>
+          	</div>
+
+
+          </div>
+
+      </div>
+
+
+<!-- <div class="col s12 m6 offset-m3">
+      	<div class="card">
+      		<div class="card-content">
+      			<span class="card-title grey-text">{{studentName}} - {{age}}</span>
+      			<p>I am a very simple card. I am good at containing small bits of information.
+      				I am convenient because I require little markup to use effectively.</p>
+      			</div>
+      		</div>
+      	</div>
+      </div> -->
+
+
+
+
+
+      
 </script>
