@@ -40,7 +40,7 @@ gulp.task('componentHTML', function(){
 });
 
 gulp.task('pageHTML', function(cb){
-  runSequence('componentHTML', 'index', cb);
+  runSequence('componentHTML', 'siteHTML', cb);
 })
 
 gulp.task('siteHTML', function(){

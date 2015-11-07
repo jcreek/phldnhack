@@ -1,7 +1,11 @@
 $(document).ready(function(){
 
-  Ractive.components.student = Ractive.extend({
-    template:'#student'
+  Ractive.components.parent = Ractive.extend({
+    template:'#parent'
+});
+
+Ractive.components.teacher = Ractive.extend({
+    template:'#teacher'
 });
 
 

@@ -1,3 +1,3 @@
-Ractive.components.student = Ractive.extend({
-    template:'#student'
+Ractive.components.parent = Ractive.extend({
+    template:'#parent'
 });
